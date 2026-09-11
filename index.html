@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chloe Cheung — Product Manager</title>
+<meta name="description" content="Product manager in Toronto. Seven years at an early-stage insurtech, taking products from zero to one and scaling them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz@1,6..72&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF9;
+  --bg-2:#F1F0ED;
+  --ink:#0F0F0E;
+  --ink-2:#3B3A37;
+  --grey:#76746D;
+  --grey-2:#A5A29A;
+  --rule:#E5E3DE;
+  --dark:#121211;
+  --dark-2:#8C8A83;
+  --dark-rule:#2B2A27;
+  --accent:#3D8C6A;
+
+  --f:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+
+  --page:1240px;
+  --pad:40px;
+  --rail:180px;
+  --gap:80px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;font-synthesis-weight:none}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--ink);color:var(--bg)}
+
+/* ---------------- type ---------------- */
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.03em;line-height:1.02}
+h1{font-size:clamp(2.7rem,6.4vw,5rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.028em;line-height:1.06}
+h3{font-size:1.15rem;letter-spacing:-.015em;line-height:1.3}
+p{margin:0 0 1.05em}
+.lede{font-size:clamp(1.15rem,1.9vw,1.4rem);line-height:1.42;letter-spacing:-.018em;color:var(--ink-2);max-width:34ch}
+.prose{font-size:1.0625rem;line-height:1.66;color:var(--ink-2);max-width:66ch}
+.prose strong{font-weight:500;color:var(--ink)}
+.prose ul{margin:0 0 1em;padding-left:0;list-style:none}
+.prose li{margin-bottom:.85em;padding-left:22px;position:relative}
+.prose li:before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--grey-2)}
+.label{font-size:.8125rem;line-height:1.4;color:var(--grey-2);letter-spacing:0}
+.small{font-size:.9375rem;color:var(--grey)}
+.reflect{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.45;letter-spacing:-.01em;color:var(--ink);max-width:52ch}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.035em;font-weight:500}
+
+/* ---------------- layout ---------------- */
+.wrap{max-width:var(--page);margin:0 auto;padding:0 var(--pad)}
+.row{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gap);align-items:start}
+.pad{padding:clamp(72px,9vw,132px) 0}
+.hr{border:0;border-top:1px solid var(--rule);margin:0}
+
+/* ---------------- nav ---------------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(250,250,249,.82);backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--rule)}
+.nav-in{max-width:var(--page);margin:0 auto;padding:15px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-weight:500;letter-spacing:-.02em;font-size:1.0625rem}
+.nav ul{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}
+.nav a.link{font-size:.9375rem;color:var(--grey);text-decoration:none;padding:7px 12px;border-radius:8px;transition:background .18s,color .18s}
+.nav a.link:hover{color:var(--ink);background:var(--bg-2)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;display:inline-block}
+.avail{display:inline-flex;align-items:center;gap:9px;font-size:.875rem;color:var(--grey);
+  border:1px solid var(--rule);border-radius:100px;padding:6px 14px 6px 12px}
+.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ink);z-index:70;transition:width .1s linear}
+
+/* ---------------- hero ---------------- */
+.hero{padding:clamp(72px,12vw,150px) 0 0}
+.who{display:flex;flex-wrap:wrap;gap:6px 34px;font-size:.9375rem;color:var(--grey);margin-bottom:clamp(30px,4vw,48px)}
+.who b{font-weight:500;color:var(--ink)}
+.hero h1{max-width:17ch;margin-bottom:34px}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 40px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;font-size:.9375rem;font-weight:500;text-decoration:none;
+  padding:11px 20px;border-radius:10px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);
+  transition:opacity .18s,transform .18s}
+.btn:hover{opacity:.86}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--rule);font-weight:400}
+.btn.ghost:hover{border-color:var(--ink);opacity:1}
+
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:clamp(64px,9vw,116px);
+  padding:30px 0 0;border-top:1px solid var(--rule)}
+.ledger .v{font-size:clamp(1.5rem,2.4vw,2rem);font-weight:500;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.ledger .l{font-size:.875rem;color:var(--grey);margin-top:7px;max-width:24ch;line-height:1.45}
+
+/* ---------------- work index ---------------- */
+.index{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.index li{border-bottom:1px solid var(--rule)}
+.entry{position:relative;display:grid;grid-template-columns:var(--rail) 1fr auto;gap:var(--gap);width:100%;
+  text-align:left;background:none;border:0;padding:40px 0;font:inherit;color:inherit;cursor:pointer;align-items:start}
+.entry:before{content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:0;bottom:0;
+  background:var(--bg-2);opacity:0;border-radius:14px;transition:opacity .22s}
+.entry:hover:before{opacity:1}
+.entry > *{position:relative}
+.etitle{display:block;font-size:clamp(1.5rem,2.8vw,2.05rem);font-weight:500;letter-spacing:-.03em;line-height:1.06;margin-bottom:12px}
+.esum{display:block;color:var(--grey);font-size:1rem;line-height:1.5;max-width:52ch}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{font-size:.75rem;color:var(--grey);background:var(--bg-2);border-radius:100px;padding:4px 11px;white-space:nowrap}
+.entry:hover .tag{background:#E8E6E1}
+.eyear{font-size:.8125rem;color:var(--grey-2);padding-top:.5em;font-variant-numeric:tabular-nums}
+.open{font-size:.9375rem;color:var(--grey-2);white-space:nowrap;padding-top:.4em;transition:color .18s}
+.entry:hover .open{color:var(--ink)}
+
+/* ---------------- mini ---------------- */
+.mini{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--gap)}
+.mini li{padding:26px 0;border-bottom:1px solid var(--rule)}
+.mini h3{margin-bottom:6px}
+.mini p{margin:0;color:var(--grey);font-size:.9688rem;max-width:44ch;line-height:1.5}
+
+/* ---------------- principles ---------------- */
+.prin{list-style:none;margin:0;padding:0;max-width:72ch;display:grid;gap:40px}
+.prin b{display:block;font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:500;letter-spacing:-.028em;line-height:1.15;margin-bottom:10px}
+.prin span{color:var(--grey);font-size:1rem;line-height:1.55;display:block;max-width:56ch}
+
+/* ---------------- timeline ---------------- */
+.tl{list-style:none;margin:0;padding:0;max-width:66ch}
+.tl li{display:grid;grid-template-columns:130px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.tl .yr{font-size:.875rem;color:var(--grey-2);font-variant-numeric:tabular-nums}
+.tl .role{font-size:1.25rem;font-weight:500;letter-spacing:-.02em}
+.tl .scope{color:var(--grey);font-size:.9688rem;margin-top:5px;max-width:48ch;line-height:1.5}
+
+/* ---------------- dark contact ---------------- */
+.dark{background:var(--dark);color:#F7F6F4}
+.dark h2{max-width:19ch;letter-spacing:-.03em}
+.dark .small{color:var(--dark-2)}
+.dark .label{color:#6B6963}
+.clist{list-style:none;margin:36px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.clist a{display:inline-flex;align-items:center;font-size:.9375rem;text-decoration:none;padding:11px 20px;border-radius:10px;
+  border:1px solid var(--dark-rule);color:#F7F6F4;transition:background .18s,border-color .18s}
+.clist a:hover{background:#1D1C1A;border-color:#454340}
+.clist a.solid{background:#F7F6F4;color:var(--dark);border-color:#F7F6F4;font-weight:500}
+.clist a.solid:hover{opacity:.88;background:#F7F6F4}
+.dfoot{border-top:1px solid var(--dark-rule);margin-top:clamp(60px,8vw,96px);padding:26px 0 0;
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8125rem;color:#6B6963}
+
+/* ---------------- case study ---------------- */
+.case{display:none}
+.case.on{display:block}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem;color:var(--grey);background:none;border:0;
+  padding:8px 14px 8px 10px;margin-left:-10px;border-radius:9px;cursor:pointer;font-family:var(--f);transition:background .18s,color .18s}
+.back:hover{color:var(--ink);background:var(--bg-2)}
+.case-head{padding:44px 0 clamp(44px,6vw,72px);border-bottom:1px solid var(--rule)}
+.case-head h1{font-size:clamp(2.2rem,5.4vw,3.9rem);max-width:16ch;margin:28px 0 22px}
+.case-head .lede{max-width:52ch}
+.case-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:44px;max-width:900px}
+.case-meta .k{font-size:.8125rem;color:var(--grey-2);margin-bottom:6px}
+.case-meta .v{font-size:.9375rem;color:var(--ink-2);line-height:1.45}
+
+.case-body{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gap);align-items:start}
+.railnav{position:sticky;top:96px;list-style:none;margin:0;padding:clamp(44px,6vw,72px) 0 0;display:grid;gap:2px}
+.railnav a{display:block;font-size:.875rem;color:var(--grey-2);text-decoration:none;padding:5px 10px;margin-left:-10px;
+  border-radius:7px;transition:color .18s,background .18s}
+.railnav a:hover{color:var(--ink)}
+.railnav a.active{color:var(--ink);background:var(--bg-2)}
+
+.block{padding:clamp(44px,6vw,72px) 0;border-bottom:1px solid var(--rule)}
+.block:last-of-type{border-bottom:0}
+.block h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:26px}
+
+.dec{list-style:none;margin:0;padding:0;max-width:68ch;display:grid;gap:28px}
+.dec li{background:var(--bg-2);border-radius:14px;padding:26px 28px}
+.dec b{display:block;font-size:1.2rem;font-weight:500;letter-spacing:-.022em;line-height:1.25;margin-bottom:9px}
+.dec span{display:block;color:var(--grey);font-size:1rem;line-height:1.55}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:36px 32px;max-width:70ch}
+.metrics .v{font-size:clamp(2rem,4vw,2.9rem);font-weight:500;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.metrics .l{font-size:.9375rem;color:var(--grey);margin-top:10px;max-width:26ch;line-height:1.45}
+
+.ph{background:var(--bg-2);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:clamp(200px,28vw,340px);max-width:70ch}
+.ph .k{font-size:.75rem;color:var(--grey-2)}
+.ph .t{font-size:1.0625rem;color:var(--grey);letter-spacing:-.01em;max-width:40ch;line-height:1.45}
+
+/* ---------------- about page ---------------- */
+.page{display:none}
+.page.on{display:block}
+.page-head{padding:44px 0 0}
+.page-head h1{font-size:clamp(2.2rem,5.4vw,3.9rem);max-width:15ch;margin:28px 0 22px}
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:var(--gap);align-items:start;
+  padding-bottom:clamp(44px,6vw,72px);border-bottom:1px solid var(--rule)}
+.portrait{aspect-ratio:4/5;background:var(--bg-2);border-radius:16px;display:flex;align-items:flex-end;padding:22px;margin-top:10px}
+.portrait .t{font-size:.9375rem;color:var(--grey);max-width:24ch;line-height:1.45}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:70ch;margin-top:34px}
+.photos div{aspect-ratio:1/1;background:var(--bg-2);border-radius:14px;display:flex;align-items:flex-end;
+  padding:16px;font-size:.8125rem;color:var(--grey-2);line-height:1.4}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:32px;max-width:70ch}
+.facts b{display:block;font-size:1.2rem;font-weight:500;letter-spacing:-.022em;line-height:1.25;margin-bottom:9px}
+.facts span{display:block;color:var(--grey);font-size:1rem;line-height:1.55;max-width:58ch}
+
+/* ---------------- toast ---------------- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);z-index:90;
+  background:var(--dark);color:#F7F6F4;font-size:.875rem;line-height:1.45;max-width:min(440px,calc(100vw - 36px));
+  padding:14px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast code{font-size:.8125rem;color:#C9C6BE}
+
+/* ---------------- a11y + motion ---------------- */
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.dark :focus-visible{outline-color:#F7F6F4}
+.skip{position:absolute;left:-9999px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:99;border-radius:8px}
+.skip:focus{left:12px;top:12px}
+.rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.16,.84,.31,1) forwards}
+.rise:nth-child(2){animation-delay:.07s}
+.rise:nth-child(3){animation-delay:.14s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .rise{opacity:1;transform:none}
+}
+
+/* ---------------- responsive ---------------- */
+@media (max-width:1000px){
+  :root{--gap:44px;--rail:150px}
+  .case-meta{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--pad:22px;--gap:22px}
+  body{font-size:16px}
+  .row,.case-body,.mini{grid-template-columns:1fr}
+  .entry{grid-template-columns:1fr;gap:0;padding:30px 0}
+  .entry:before{display:none}
+  .eyear{padding-top:0;margin-bottom:10px}
+  .open{padding-top:14px;color:var(--ink)}
+  .ledger{grid-template-columns:1fr 1fr;gap:26px}
+  .tl li{grid-template-columns:1fr;gap:5px}
+  .case-meta{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .railnav{display:none}
+  .nav ul{gap:2px}
+  .nav a.link{padding:7px 9px}
+  .hide-s{display:none}
+  .dec li{padding:22px}
+  .about-grid{grid-template-columns:1fr;gap:30px}
+  .portrait{aspect-ratio:3/4;max-width:340px}
+  .photos{grid-template-columns:1fr 1fr;gap:12px}
+  .row > .label{margin-bottom:6px}
+}
+</style>
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" data-home>Chloe Cheung</a>
+    <ul>
+      <li><a class="link" href="#work" data-home>Work</a></li>
+      <li><a class="link" href="#about" data-page="about">About</a></li>
+      <li><a class="link" id="nav-resume" href="#" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="link" href="#contact" data-home>Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+<div id="home">
+  <div id="top"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="who rise">
+        <span><b>Product Manager</b></span>
+        <span>Insurance &amp; fintech, consumer products</span>
+        <span>Toronto, Canada</span>
+      </div>
+      <h1 class="rise">I take products from zero to one, then stay for the harder half.</h1>
+      <div class="rise">
+        <p class="lede" style="margin-bottom:36px">Seven years at an early-stage insurtech — scaling products once pricing, operations and real customers are involved.</p>
+        <div class="hero-foot">
+          <div class="cta-row">
+            <a class="btn" id="cta-resume" href="#" target="_blank" rel="noopener">Read my resume</a>
+            <a class="btn ghost" id="cta-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" id="cta-email" href="#">Email</a>
+          </div>
+          <span class="avail"><span class="dot"></span>Open to senior product roles</span>
+        </div>
+      </div>
+
+      <div class="ledger">
+        <div><div class="v">Seven years</div><div class="l">at one company, analyst to product manager</div></div>
+        <div><div class="v">8,000+</div><div class="l">health &amp; dental policies sold since launch</div></div>
+        <div><div class="v">Two</div><div class="l">distribution channels launched on one engine</div></div>
+        <div><div class="v">~15</div><div class="l">funnel experiments run and measured</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="intro">
+    <div class="wrap pad">
+      <div class="row">
+        <p class="label">About</p>
+        <div class="prose">
+          <p>I joined PolicyMe when the team was small enough that everyone did a bit of everything, and what I did was operations — running processes by hand, watching where they broke, and talking to customers when they did. It turned out to be the best possible training for product work.</p>
+          <p>Over seven years I moved from analyst to product manager and ended up owning our health and dental line end to end: a new product built with a distribution partner, then a direct-to-consumer launch on the same foundation, then renewals once the first cohort came due.</p>
+          <p>What I'm good at is taking a problem nobody has framed yet and making it concrete enough for a team to act on. Most of my work has lived where insurance rules, pricing logic, operational capacity and customer experience collide, and someone has to decide what actually gets built — and in what order.</p>
+          <p style="margin-top:26px"><button class="btn ghost" data-page="about" style="cursor:pointer;font-family:var(--f)">More about me</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap pad">
+      <div class="row" style="margin-bottom:44px">
+        <p class="label">Selected work</p>
+        <p class="lede" style="margin:0;max-width:44ch">Four projects: a product built twice for two channels, a renewal cycle constrained by a date nobody could move, a self-service platform, and a year of funnel experiments.</p>
+      </div>
+      <ul class="index" id="work-index"></ul>
+    </div>
+  </section>
+
+  <!-- OTHER -->
+  <section id="other">
+    <div class="wrap pad" style="padding-top:0">
+      <div class="row">
+        <p class="label">Also built</p>
+        <ul class="mini" id="mini-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="how">
+    <div class="wrap pad">
+      <div class="row">
+        <p class="label">How I work</p>
+        <ul class="prin">
+          <li><b>Start with the problem, not the feature.</b><span>A feature request is usually a summary of something that went wrong upstream. It's worth finding out what.</span></li>
+          <li><b>Make ambiguity concrete.</b><span>On a vague project the first deliverable is a written definition, not a design. Most disagreement turns out to be about wording nobody has pinned down yet.</span></li>
+          <li><b>Understand the operational reality behind the interface.</b><span>Every screen has a person behind it processing exceptions. If I haven't sat with them, I don't understand the product yet.</span></li>
+          <li><b>Ship, then find out.</b><span>A smaller thing in front of real customers beats a bigger thing that's still an argument. Most of what I've been sure about was half right.</span></li>
+          <li><b>Use frameworks as a starting point, not an answer.</b><span>Scoring models are useful for making a decision discussable. They aren't a substitute for making it.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section id="career">
+    <div class="wrap pad" style="padding-top:0">
+      <div class="row">
+        <p class="label">Career</p>
+        <div>
+          <ul class="tl">
+            <li><span class="yr">[Year] – present</span><div><div class="role">Product Manager II</div><div class="scope">Health &amp; dental end to end across two channels, plus renewals, customer accounts and the growth funnel.</div></div></li>
+            <li><span class="yr">[Year] – [Year]</span><div><div class="role">Product Manager I</div><div class="scope">First full product ownership: critical illness, customer accounts, authentication.</div></div></li>
+            <li><span class="yr">[Year] – [Year]</span><div><div class="role">Business / Operations Analyst</div><div class="scope">Ran servicing and reporting processes by hand, then built the internal tools that replaced them.</div></div></li>
+          </ul>
+          <p class="small" style="margin-top:26px;max-width:60ch">All three at <strong style="font-weight:500;color:var(--ink)">PolicyMe</strong>, a Canadian digital insurance company, joined at early stage. Before that, co-op terms at Sun Life Financial and Economical Insurance. University of Waterloo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal">
+    <div class="wrap pad" style="padding-top:0">
+      <div class="row">
+        <p class="label">Away from work</p>
+        <div class="prose">
+          <p>Badminton, yoga, and a pottery wheel I'm still losing most arguments with. I travel when I can and come back with more photographs than anyone needs. <button class="btn ghost" data-page="about" style="cursor:pointer;font-family:var(--f);font-size:.875rem;padding:7px 14px;margin-left:6px">The longer version</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="dark">
+    <div class="wrap pad">
+      <div class="row">
+        <p class="label">Contact</p>
+        <div>
+          <h2>Have an interesting product problem? I'd like to hear about it.</h2>
+          <p class="small" style="max-width:52ch;margin-top:22px">Happy to talk about senior product roles, or about anything where the business logic is more complicated than the interface suggests.</p>
+          <ul class="clist">
+            <li><a class="solid" id="c-email" href="#">Email</a></li>
+            <li><a id="c-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a id="c-resume" href="#" target="_blank" rel="noopener">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dfoot">
+        <span>Chloe Cheung — Product Manager, Toronto</span>
+        <span>Case studies describe my own work; company figures are generalised.</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<article class="case" id="case" tabindex="-1"></article>
+<article class="page" id="about-page" tabindex="-1"></article>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main>
+
+<script>
+
+/* ============================================================
+   EDIT ME — your links live here and nowhere else.
+   ============================================================ */
+const SITE = {
+  email: "chloe@example.com",
+  linkedin: "https://www.linkedin.com/in/your-handle",
+  resume: "resume.pdf"
+};
+
+/* ============================================================
+   CASE STUDIES
+   Bracketed values are placeholders — replace with verified numbers.
+   ============================================================ */
+const CASES = [
+{
+  id: "health-dental",
+  year: "[Year] – [Year]",
+  title: "Health &amp; Dental: zero to one, twice",
+  summary: "A new insurance line built with a distribution partner, then relaunched on our own direct channel using the same engine. Grew to 8,000+ policies.",
+  tags: ["0→1", "Two channels", "Pricing", "Payments", "Operations"],
+  role: "Product Manager — end to end",
+  team: "Engineering, design, operations, actuarial, compliance, partner insurer",
+  blocks: [
+    {label:"Context", html:`<p>The company had built a term life business and wanted a second product line. Health and dental is a different animal: recurring monthly premiums instead of a single underwriting decision, tiered plans, household composition, provincial variation, and a partner insurer's rules sitting underneath all of it.</p><p>The first route to market was a partnership with CAA — their brand, their members, our product and technology. A direct-to-consumer version under our own brand would follow.</p>`},
+    {label:"Problem", html:`<p>Buying health and dental coverage in Canada usually meant a PDF brochure, a phone call and a paper application. We wanted someone to be able to compare plans, understand what was actually covered, apply and pay in a single sitting.</p><p>Underneath, the same flow had to satisfy the insurer's eligibility rules, produce documents that compliance would sign off on, and leave the operations team something they could realistically service.</p>`},
+    {type:"visual", kind:"Product screenshot", text:"Health &amp; Dental quote flow — plan comparison and price by household"},
+    {label:"Why it was hard", html:`<ul>
+      <li><strong>Two products sharing one spine.</strong> The partner-branded and direct versions shared quoting and application but differed on eligibility, member verification, pricing and brand.</li>
+      <li><strong>Pricing was a matrix, not a number.</strong> Province, age, household composition and plan tier all moved the premium, under rules owned outside our team.</li>
+      <li><strong>Nothing existed upstream or downstream.</strong> No recurring billing, no issuance for this product type, no servicing tooling.</li>
+      <li><strong>Approvals ran on a different clock.</strong> Wording, disclosures and policy documents needed partner and compliance sign-off that didn't fit inside a sprint.</li>
+      <li><strong>No internal precedent.</strong> Nobody could tell me how this product should behave after purchase, because we'd never sold one.</li>
+    </ul>`},
+    {label:"My role", html:`<p>I owned the product end to end for both launches: discovery, requirements, scope, sequencing, and the decisions in between. Engineering owned the architecture, design owned the flows. I owned what we built, in what order, and what we were prepared to leave out.</p><p>Day to day that meant being the person translating between the insurer, actuarial, compliance, operations and the build team — and holding the single version of the rules everyone was working from.</p>`},
+    {label:"Approach", html:`<ul>
+      <li><strong>Wrote the rules down before anyone designed anything.</strong> Eligibility, plan structure and pricing logic into one document that the insurer, actuarial and engineering all reviewed. Most of the early disagreement turned out to be vocabulary.</li>
+      <li><strong>Defined the smallest complete journey.</strong> Quote, apply, pay, policy issued, documents delivered. Anything not on that path didn't make launch.</li>
+      <li><strong>Sequenced by what's expensive to change.</strong> Billing and issuance first, marketing surfaces last.</li>
+      <li><strong>Walked operations through the flow before launch</strong> and built the manual fallbacks they'd need on day one, rather than discovering them in week two.</li>
+      <li><strong>Treated the partner launch as version one on purpose.</strong> A defined audience and real volume before we spent acquisition money.</li>
+    </ul>`},
+    {type:"visual", kind:"Diagram", text:"CAA Health &amp; Dental → PolicyMe direct — shared quoting engine, divergent eligibility and branding"},
+    {type:"decisions", items:[
+      {d:"Launch through a partner channel first", why:"Slower to negotiate and less brand control, but it gave us a known audience, real volume and a full cycle of learning before we put marketing spend behind our own version."},
+      {d:"One quoting engine, two skins", why:"More design work upfront and some awkward configuration. The alternative was two codebases drifting apart, which would have doubled every future change."},
+      {d:"Ship known gaps with a documented manual process", why:"We launched with steps operations handled by hand instead of delaying for automation, then automated the ones that actually hurt at volume. Some of them never needed it."},
+      {d:"Fewer plan permutations at launch", why:"Every additional option multiplied pricing combinations, document variants and support load. We took the narrower shelf and added to it once we could see what people chose."}
+    ]},
+    {type:"metrics", label:"Outcome", items:[
+      {v:"8,000+", l:"policies sold across both channels"},
+      {v:"[$XM]", l:"annualized premium"},
+      {v:"[X months]", l:"from partner launch to direct channel, on the same core flow"},
+      {v:"[X%]", l:"of applications completed with no operations touch"}
+    ]},
+    {label:"What I learned", html:`<p>The interface was the easy part. The product was really a set of agreements — with an insurer, with compliance, with the team who'd service it — and the build only moved as fast as those agreements became concrete. I now write the rules document first on anything with this shape.</p>`}
+  ]
+},
+{
+  id: "renewals",
+  year: "[Year] – [Year]",
+  title: "Health &amp; Dental renewals",
+  summary: "Renewing a growing book on a legally fixed notice date, with final pricing arriving late in the window. Built to absorb the exception, not the average.",
+  tags: ["Regulatory", "Pricing", "Partner dependencies", "Retention"],
+  role: "Product Manager — owned the renewal programme",
+  team: "Operations, customer success, compliance, actuarial, external insurance partners",
+  blocks: [
+    {label:"Context", html:`<p>A year after launch the first cohort of health and dental policies approached their anniversary. A renewal isn't a quiet auto-charge: it's a new price, sometimes new terms, and a legal obligation to tell the customer in advance.</p><p>Done badly it becomes thousands of manual policy reviews and a spike in cancellations. Done well nobody notices it happened.</p>`},
+    {label:"Problem", html:`<p>Every in-force policy needed an accurate renewal offer, delivered before a regulated deadline, in language a customer could act on — without operations processing the book by hand, and without a wave of support contacts asking what changed.</p>`},
+    {label:"Why it was hard", html:`<ul>
+      <li><strong>A fixed deadline meeting a variable input.</strong> Customers are entitled to notice of their renewal terms a set number of days before the anniversary. Final pricing depends on external insurance partners whose own timelines don't always align with that window. The distance between when we could know and when we had to tell was the central constraint of the project.</li>
+      <li><strong>A renewal is not one number.</strong> Province changes, dependents added or removed, plan changes and shifts in discount eligibility all altered the outcome, and each combination had its own correct treatment.</li>
+      <li><strong>The communication had two jobs.</strong> It was a compliance document and a readable email at the same time, and those pull in opposite directions.</li>
+      <li><strong>Cost scaled with the book.</strong> Every exception handled manually in the first cycle would be handled manually again, on a larger book, in the next one.</li>
+    </ul>`},
+    {type:"visual", kind:"Timeline diagram", text:"Renewal cycle — pricing inputs, generation window, regulated notice date, anniversary"},
+    {label:"My role", html:`<p>I owned the renewal product and ran the working group across operations, customer success, compliance, actuarial and our external partners. I wrote the change-scenario matrix that defined what each situation should produce, and I made the call on what the first cycle would and wouldn't handle automatically.</p>`},
+    {label:"Approach", html:`<ul>
+      <li><strong>Worked backwards from the notice date.</strong> It was the only immovable object in the project, so everything else was scoped against it.</li>
+      <li><strong>Split what we could compute early from what we had to wait for,</strong> so a late pricing input didn't mean regenerating the whole run.</li>
+      <li><strong>Enumerated the change scenarios</strong> with operations and compliance, and agreed the correct output for each before building any of them.</li>
+      <li><strong>Wrote the customer message around the two questions people actually ask:</strong> what changed, and what do I pay now. Everything else moved behind a link.</li>
+      <li><strong>Gave operations a review queue instead of a spreadsheet,</strong> so exceptions surfaced as work items rather than as discoveries.</li>
+    </ul>`},
+    {type:"decisions", items:[
+      {d:"Treat the notice date as a design input, not a deadline to negotiate", why:"Once we accepted it as fixed, most of the arguing stopped and the scope questions answered themselves. We designed the pipeline to tolerate a late input rather than asking partners to be early."},
+      {d:"Build for the exception, not the average", why:"Most renewals are unchanged and trivially automated. Almost all of the value — and all of the risk — sat in the minority where something had changed, so that's where the build went."},
+      {d:"Automate the decision, keep a human on the edge cases", why:"Full automation would have been faster to describe and much harder to trust in cycle one. We automated the classification and routed the genuinely unusual cases to a person, then narrowed that set each cycle."},
+      {d:"One clear number in the email, detail one click away", why:"Compliance needed completeness; customers needed an answer. Layering it satisfied both, at the cost of a longer review with legal on the wording."}
+    ]},
+    {type:"metrics", label:"Outcome", items:[
+      {v:"[X%]", l:"of renewals processed without manual intervention"},
+      {v:"100%", l:"of notices delivered inside the regulated window"},
+      {v:"[X%]", l:"retention through the renewal cycle"},
+      {v:"[X%]", l:"fewer support contacts per renewing policy than the first manual run"}
+    ]},
+    {label:"What I learned", html:`<p>A deadline you cannot move is a useful design tool. The instinct is to fight the constraint; the better use of the time is to build something that absorbs it. The system we ended up with was simpler than the one we would have designed with a flexible date.</p>`}
+  ]
+},
+{
+  id: "customer-accounts",
+  year: "[Year] – [Year]",
+  title: "Customer accounts and self-service",
+  summary: "Policyholders had no way to see their own coverage. Built a product-agnostic account platform, read-only first, then transactional.",
+  tags: ["Platform", "Self-service", "Authentication", "Support deflection"],
+  role: "Product Manager — scope, sequencing, access model",
+  team: "Engineering, design, customer success, operations",
+  blocks: [
+    {label:"Context", html:`<p>Every document request, payment update and coverage question arrived by email or phone. That was manageable at a few hundred policies and untenable as the book grew — and it meant a customer's only view of a product they paid for monthly was a PDF they'd have to go and find.</p>`},
+    {label:"Problem", html:`<p>Give policyholders a place to see their coverage, find their documents, manage payment and make simple changes themselves — and take the corresponding volume off the operations team, without creating a new class of risk around who can see and change what.</p>`},
+    {label:"Why it was hard", html:`<ul>
+      <li><strong>More than one product had to live in it.</strong> Term life and health &amp; dental have different lifecycles, documents and permitted changes, and the account had to hold both without becoming two products in a trench coat.</li>
+      <li><strong>Identity is not simple in insurance.</strong> The person insured, the policy owner and the person paying are not always the same, and the access model had to reflect that.</li>
+      <li><strong>Policy data lived in several systems,</strong> not all of which agreed on what "current" meant.</li>
+      <li><strong>Sensitive documents raised the cost of getting authentication wrong</strong> — but a password system would have created its own support queue.</li>
+    </ul>`},
+    {type:"visual", kind:"Product screenshot", text:"Account overview — coverage summary, documents, payment history"},
+    {label:"My role", html:`<p>I owned scope and sequencing, and drove the decision on the access model with engineering and customer success. I prioritised the build against actual support contact reasons rather than a feature wishlist, and pushed for the account to be a shell a second product could drop into.</p>`},
+    {label:"Approach", html:`<ul>
+      <li><strong>Started from the support inbox.</strong> Categorised what people actually contacted us about and ranked the build by volume and by how much of it a screen could genuinely resolve.</li>
+      <li><strong>Shipped read-only first</strong> — coverage, documents, payment history — then added the transactional pieces once the foundation was in use.</li>
+      <li><strong>Designed the account as a container,</strong> so adding a product line meant adding a module rather than rebuilding.</li>
+      <li><strong>Replaced passwords with magic-link sign-in, then added 2FA</strong> as the surface got more sensitive.</li>
+    </ul>`},
+    {type:"decisions", items:[
+      {d:"Read before write", why:"The two biggest contact reasons were \"where is my document\" and \"what am I covered for\". Answering those removed real volume without touching flows where a bug has consequences."},
+      {d:"Product-agnostic shell over a faster first launch", why:"It cost time on the product we were actually building for. It paid for itself the first time we added the second one, which is the only reason I'd make the same call again."},
+      {d:"Passwordless sign-in", why:"Fewer credentials to reset and no password support queue, in exchange for a dependency on email deliverability and a slightly unfamiliar first login. 2FA closed the gap on the sensitive surfaces."}
+    ]},
+    {type:"metrics", label:"Outcome", items:[
+      {v:"[X%]", l:"fewer document and coverage support contacts"},
+      {v:"[XK+]", l:"policyholders with an active account"},
+      {v:"[X]", l:"product lines served by the same platform"}
+    ]},
+    {label:"What I learned", html:`<p>Self-service is an operations project wearing a user interface. The screens were the straightforward part; agreeing who may see and change what, across teams with different risk appetites, took most of the calendar.</p>`}
+  ]
+},
+{
+  id: "growth",
+  year: "[Year] – [Year]",
+  title: "Funnel experiments and checkout",
+  summary: "Around fifteen experiments across a regulated purchase funnel, measured on issued policies rather than clicks.",
+  tags: ["Experimentation", "Checkout", "Pricing", "Analytics"],
+  role: "Product Manager — experiment roadmap and measurement",
+  team: "Design, engineering, marketing, analytics",
+  blocks: [
+    {label:"Context", html:`<p>Acquisition was working. The distance between arriving on the site and holding a policy was not. An insurance funnel is long by necessity — there are questions you have to ask — so the opportunity was in everything that wasn't necessary.</p>`},
+    {label:"Problem", html:`<p>Find where people were dropping out and what would actually move them, without degrading application quality or removing anything the product legally needed to collect.</p>`},
+    {label:"Why it was hard", html:`<ul>
+      <li><strong>You can't cut the questions you don't like.</strong> Much of the friction is required for underwriting or disclosure, so the work was in sequencing, framing and explaining rather than removing.</li>
+      <li><strong>Slow reads.</strong> Segment volumes meant some tests needed patience, and the temptation to call them early was constant.</li>
+      <li><strong>The obvious metric is the wrong one.</strong> Optimising for started applications is easy and worthless; the number that matters is policies issued.</li>
+    </ul>`},
+    {type:"visual", kind:"Funnel diagram", text:"Step-level drop-off — landing → quote → application → checkout → issued policy"},
+    {label:"My role", html:`<p>I ran the experiment roadmap with design, engineering and marketing: choosing what to test, defining success before we started, and calling the results. Around fifteen experiments over the period.</p>`},
+    {label:"Approach", html:`<ul>
+      <li><strong>Instrumented the funnel step by step</strong> so the conversation started from where people left rather than from opinion.</li>
+      <li><strong>Grouped hypotheses into three buckets</strong> — friction, comprehension and price perception — which made it obvious we'd been over-testing one of them.</li>
+      <li><strong>Ran the cheapest test that could answer the question,</strong> including copy-only tests where a build wasn't warranted.</li>
+      <li><strong>Wrote down the expected result before launching.</strong> Comparing that to the actual result is where most of the learning was.</li>
+    </ul>`},
+    {type:"decisions", items:[
+      {d:"Single-page checkout over a multi-step flow", why:"Fewer transitions to abandon and a clearer sense of how much was left, at the cost of a denser page that needed careful hierarchy work to stay readable on mobile."},
+      {d:"Family discount built as pricing and eligibility, not a banner", why:"Slower to build than a promotional message and it touched quoting logic, but it changed the actual price a household saw rather than making a claim they'd have to verify."},
+      {d:"Killed tests that couldn't reach a read", why:"Shipping an inconclusive result as a win is how teams accumulate confident folklore. Where the volume wasn't there, we said so and made the call on judgement, labelled as judgement."},
+      {d:"Measured on issued policies", why:"It lengthened feedback loops considerably and made some experiments look worse. It also stopped us shipping two changes that raised application starts and lowered completions."}
+    ]},
+    {type:"metrics", label:"Outcome", items:[
+      {v:"[X%]", l:"improvement in checkout completion"},
+      {v:"[X%]", l:"more issued policies from the same traffic"},
+      {v:"[X of ~15]", l:"experiments shipped to all traffic"}
+    ]},
+    {label:"What I learned", html:`<p>The losing tests taught me more than the winners, particularly about how people read price. Half the value of an experiment programme is the discipline of writing down what you expected before you find out.</p>`}
+  ]
+}
+];
+
+const MINI = [
+  {t:"Critical Illness", d:"First product I owned end to end — quoting, application and issuance for a new coverage type."},
+  {t:"Magic link &amp; 2FA", d:"Replaced passwords with email sign-in, then added a second factor as account surfaces got more sensitive."},
+  {t:"Family discount", d:"Household eligibility and pricing logic, built into quoting rather than bolted on as a promotion."},
+  {t:"Internal operations tools", d:"Servicing, review and exception-handling tooling for the team processing policies day to day."},
+  {t:"Stripe &amp; payments", d:"Recurring billing, failed-payment recovery and payment method updates for monthly premium products."},
+  {t:"Product experiments", d:"Ongoing test roadmap across acquisition, quoting and checkout surfaces."}
+];
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const homeEl = $("#home"), caseEl = $("#case"), pageEl = $("#about-page"), progEl = $("#prog");
+
+/* ---------- links ----------
+   Any value still left at its placeholder shows a reminder instead of a dead link. */
+const UNSET = {resume:"resume.pdf", linkedin:"https://www.linkedin.com/in/your-handle", email:"chloe@example.com"};
+const notSet = k => SITE[k] === UNSET[k];
+
+const toastEl = $("#toast");
+let toastTimer;
+function toast(msg){
+  toastEl.innerHTML = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toastEl.classList.remove("show"), 4200);
+}
+
+function wire(sel, key, href){
+  const e = $(sel); if(!e) return;
+  e.href = href;
+  if(notSet(key)){
+    e.addEventListener("click", ev=>{
+      ev.preventDefault();
+      toast(`Your ${key} link isn't set yet. Add it to <code>SITE.${key}</code> at the top of the script.`);
+    });
+  }
+}
+["#cta-resume","#c-resume","#nav-resume"].forEach(x=>wire(x,"resume",SITE.resume));
+["#cta-linkedin","#c-linkedin"].forEach(x=>wire(x,"linkedin",SITE.linkedin));
+["#cta-email","#c-email"].forEach(x=>wire(x,"email","mailto:"+SITE.email));
+$("#c-email").textContent = SITE.email;
+
+/* home: work index */
+$("#work-index").innerHTML = CASES.map(c=>`
+  <li><button class="entry" data-case="${c.id}" aria-label="Open case study: ${c.title.replace(/&amp;/g,"and")}">
+    <span class="eyear">${c.year}</span>
+    <span>
+      <span class="etitle">${c.title}</span>
+      <span class="esum">${c.summary}</span>
+      <span class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</span>
+    </span>
+    <span class="open">Read case study</span>
+  </button></li>`).join("");
+
+/* home: smaller work */
+$("#mini-list").innerHTML = MINI.map(m=>`<li><h3>${m.t}</h3><p>${m.d}</p></li>`).join("");
+
+/* ---------- case study ---------- */
+function blockHTML(b,i){
+  const id = "s"+i;
+  if(b.type==="visual")
+    return `<section class="block" id="${id}"><div class="ph">
+      <div class="k">${b.kind}</div><div class="t">[ ${b.text} ]</div></div></section>`;
+
+  if(b.type==="decisions")
+    return `<section class="block" id="${id}"><h2>Key decisions and tradeoffs</h2>
+      <ul class="dec">${b.items.map(x=>`<li><b>${x.d}</b><span>${x.why}</span></li>`).join("")}</ul></section>`;
+
+  if(b.type==="metrics")
+    return `<section class="block" id="${id}"><h2>${b.label}</h2>
+      <div class="metrics">${b.items.map(x=>`<div><div class="v">${x.v}</div><div class="l">${x.l}</div></div>`).join("")}</div>
+      <p class="label" style="margin-top:32px">Bracketed figures are placeholders pending verification.</p></section>`;
+
+  if(b.label==="What I learned")
+    return `<section class="block" id="${id}"><h2>${b.label}</h2>
+      <div class="reflect">${b.html.replace(/<\/?p>/g,"")}</div></section>`;
+
+  return `<section class="block" id="${id}"><h2>${b.label}</h2><div class="prose">${b.html}</div></section>`;
+}
+
+function railLabel(b){
+  if(b.type==="visual") return null;
+  if(b.type==="decisions") return "Decisions";
+  if(b.type==="metrics") return b.label;
+  if(b.label==="Why it was hard") return "Why it was hard";
+  return b.label;
+}
+
+let spy = null;
+
+function renderCase(c){
+  const others = CASES.filter(x=>x.id!==c.id).slice(0,2);
+  const rail = c.blocks.map((b,i)=>({id:"s"+i,label:railLabel(b)})).filter(x=>x.label);
+
+  caseEl.innerHTML = `
+    <div class="wrap">
+      <div class="case-head">
+        <button class="back" data-back>← All work</button>
+        <h1>${c.title}</h1>
+        <p class="lede">${c.summary}</p>
+        <div class="case-meta">
+          <div><div class="k">Timeframe</div><div class="v">${c.year}</div></div>
+          <div><div class="k">My role</div><div class="v">${c.role}</div></div>
+          <div><div class="k">Worked with</div><div class="v">${c.team}</div></div>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <nav aria-label="Sections">
+          <ul class="railnav" id="railnav">
+            ${rail.map(r=>`<li><a href="#${r.id}" data-spy="${r.id}">${r.label}</a></li>`).join("")}
+          </ul>
+        </nav>
+        <div>
+          ${c.blocks.map(blockHTML).join("")}
+          <section class="block" style="border-top:1px solid var(--rule)">
+            <h2 style="margin-bottom:0">Next</h2>
+            <ul class="index" style="border-top:0;margin-top:26px">
+              ${others.map(o=>`<li><button class="entry" data-case="${o.id}" style="grid-template-columns:1fr auto;gap:24px;padding:26px 0">
+                <span><span class="etitle" style="font-size:1.4rem;margin-bottom:8px">${o.title}</span>
+                <span class="esum">${o.summary}</span></span>
+                <span class="open">Read</span></button></li>`).join("")}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>`;
+
+  attachSpy(caseEl, rail.map(r=>r.id));
+}
+
+function attachSpy(root, ids){
+  if(spy) spy.disconnect();
+  const links = [...root.querySelectorAll("[data-spy]")];
+  if(!links.length) return;
+  spy = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) links.forEach(l=>l.classList.toggle("active", l.dataset.spy===e.target.id));
+    });
+  },{rootMargin:"-25% 0px -65% 0px"});
+  ids.forEach(id=>{const el=document.getElementById(id); if(el) spy.observe(el);});
+  links[0].classList.add("active");
+}
+
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+function renderAbout(){
+  pageEl.innerHTML = `
+  <div class="wrap">
+    <div class="page-head">
+      <a class="back" href="#top" data-home>← Home</a>
+      <div class="about-grid">
+        <div>
+          <h1>I got into product through the operations door.</h1>
+          <p class="lede" style="max-width:48ch">Which is to say I learned what a product really does by being the person who cleaned up after it.</p>
+        </div>
+        <div class="portrait"><div class="t">[ Photo — a warm, natural headshot. Not a corporate portrait. ]</div></div>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <nav aria-label="Sections">
+        <ul class="railnav" id="railnav">
+          <li><a href="#a1" data-spy="a1">How I got here</a></li>
+          <li><a href="#a2" data-spy="a2">What I'm good at</a></li>
+          <li><a href="#a3" data-spy="a3">What's next</a></li>
+          <li><a href="#a4" data-spy="a4">Career</a></li>
+          <li><a href="#a5" data-spy="a5">Away from work</a></li>
+        </ul>
+      </nav>
+      <div>
+        <section class="block" id="a1">
+          <h2>How I got here</h2>
+          <div class="prose">
+            <p>I joined PolicyMe as an analyst when the company was small enough that job titles were mostly a formality. What I actually did was operations: issuing policies, fixing the ones that went wrong, and answering the questions customers asked when the website didn't. It gave me an unusually concrete picture of where a product breaks — not in the flow diagram, but on the eighteenth exception nobody designed for.</p>
+            <p>When we started building rather than patching, I moved into product. First a single coverage type, then customer accounts and authentication, then health and dental, which became the work I'd point to first.</p>
+            <p>Seven years is a long time at one company. I stayed because the scope kept changing faster than I could get comfortable in it. The company I joined sold one product through one channel; that stopped being true, and I owned a meaningful part of the difference.</p>
+          </div>
+        </section>
+
+        <section class="block" id="a2">
+          <h2>What I'm good at</h2>
+          <ul class="facts">
+            <li><b>Turning ambiguity into something a team can act on.</b><span>Most of my projects arrived as a sentence — "we should sell health and dental" — and the first useful deliverable was never a design. It was a written definition specific enough for people to disagree with precisely.</span></li>
+            <li><b>Zero to one, without romanticising it.</b><span>New products are mostly unglamorous sequencing decisions about what you can survive not having at launch. I'm good at making those calls and living with them.</span></li>
+            <li><b>Complex business logic.</b><span>Pricing matrices, eligibility rules, regulatory requirements, renewal mechanics. I'm comfortable holding the whole rule set in my head, and I've learned that most disagreements in this territory are definition problems wearing a product costume.</span></li>
+            <li><b>Teams that don't share a vocabulary.</b><span>Actuarial, compliance, operations and engineering all describe the same product differently. A lot of my value has been sitting between them and making sure one version of the truth reaches the build.</span></li>
+          </ul>
+        </section>
+
+        <section class="block" id="a3">
+          <h2>What I'm looking for next</h2>
+          <div class="prose">
+            <p>A senior product role where the hard part is the problem rather than the process. I do my best work where there's real complexity underneath the interface — regulated products, pricing, payments, operational systems — and where I can stay close to both customers and the people servicing them.</p>
+            <p>I'm less interested in maintaining a roadmap I inherited than in being trusted to decide what belongs on it.</p>
+          </div>
+        </section>
+
+        <section class="block" id="a4">
+          <h2>Career</h2>
+          <ul class="tl">
+            <li><span class="yr">[Year] – present</span><div><div class="role">Product Manager II, PolicyMe</div><div class="scope">Health &amp; dental end to end across two channels, plus renewals, customer accounts and the growth funnel.</div></div></li>
+            <li><span class="yr">[Year] – [Year]</span><div><div class="role">Product Manager I, PolicyMe</div><div class="scope">First full product ownership: critical illness, customer accounts, authentication.</div></div></li>
+            <li><span class="yr">[Year] – [Year]</span><div><div class="role">Business / Operations Analyst, PolicyMe</div><div class="scope">Ran servicing and reporting by hand, then built the internal tools that replaced the manual work.</div></div></li>
+            <li><span class="yr">[Year]</span><div><div class="role">Co-op terms</div><div class="scope">Sun Life Financial and Economical Insurance.</div></div></li>
+            <li><span class="yr">[Year]</span><div><div class="role">University of Waterloo</div><div class="scope">[Degree and programme]</div></div></li>
+          </ul>
+        </section>
+
+        <section class="block" id="a5">
+          <h2>Away from work</h2>
+          <div class="prose">
+            <p>I play badminton weekly and take it more seriously than the level of my play justifies. Yoga is what keeps me from spending eleven hours a day in a chair. I throw pottery with real commitment and mixed results — most of my bowls lean.</p>
+            <p>I travel when I can, usually with a camera, and I'm the person who comes home with four hundred photographs and posts three.</p>
+          </div>
+          <div class="photos">
+            <div>[ Photo — studio or court ]</div>
+            <div>[ Photo — travel ]</div>
+            <div>[ Photo — ceramics ]</div>
+          </div>
+        </section>
+
+        <section class="block" style="border-top:1px solid var(--rule)">
+          <h2 style="max-width:16ch">Have an interesting product problem?</h2>
+          <ul class="clist" style="margin-top:28px">
+            <li><a class="solid" href="mailto:${SITE.email}" style="background:var(--ink);color:var(--bg);border-color:var(--ink)">${SITE.email}</a></li>
+            <li><a href="${SITE.linkedin}" target="_blank" rel="noopener" style="border-color:var(--rule);color:var(--ink)">LinkedIn</a></li>
+            <li><a href="${SITE.resume}" target="_blank" rel="noopener" style="border-color:var(--rule);color:var(--ink)">Resume</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>`;
+  attachSpy(pageEl, ["a1","a2","a3","a4","a5"]);
+}
+
+/* ---------- routing ---------- */
+function hideAll(){
+  if(spy){ spy.disconnect(); spy=null; }
+  homeEl.style.display="none";
+  caseEl.classList.remove("on"); caseEl.innerHTML="";
+  pageEl.classList.remove("on"); pageEl.innerHTML="";
+}
+
+function onView(){ return caseEl.classList.contains("on") || pageEl.classList.contains("on"); }
+
+function openCase(id,push=true){
+  const c = CASES.find(x=>x.id===id); if(!c) return;
+  hideAll();
+  renderCase(c);
+  caseEl.classList.add("on");
+  document.title = c.title.replace(/&amp;/g,"&") + " — Chloe Cheung";
+  window.scrollTo(0,0);
+  caseEl.focus({preventScroll:true});
+  if(push) history.pushState({case:id},"","#"+id);
+}
+
+function openAbout(push=true){
+  hideAll();
+  renderAbout();
+  pageEl.classList.add("on");
+  document.title = "About — Chloe Cheung";
+  window.scrollTo(0,0);
+  pageEl.focus({preventScroll:true});
+  if(push) history.pushState({page:"about"},"","#about");
+}
+
+function showHome(push=true){
+  hideAll();
+  homeEl.style.display="";
+  document.title = "Chloe Cheung — Product Manager";
+  if(push) history.pushState({},"","#work");
+}
+
+document.addEventListener("click",e=>{
+  const open = e.target.closest("[data-case]");
+  if(open){ openCase(open.dataset.case); return; }
+
+  const page = e.target.closest('[data-page="about"]');
+  if(page){ e.preventDefault(); openAbout(); return; }
+
+  const back = e.target.closest("[data-back]");
+  if(back){ showHome(); document.getElementById("work").scrollIntoView(); return; }
+
+  const home = e.target.closest("[data-home]");
+  if(home && onView()){
+    e.preventDefault();
+    const href = home.getAttribute("href");
+    showHome(false);
+    history.pushState({},"",href);
+    const t = document.querySelector(href);
+    if(t) t.scrollIntoView();
+  }
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape" && onView()){
+    const back = caseEl.classList.contains("on") ? "work" : "top";
+    showHome(); document.getElementById(back).scrollIntoView();
+  }
+});
+
+window.addEventListener("popstate",e=>{
+  const id = (e.state && e.state.case) || location.hash.replace("#","");
+  if(CASES.some(c=>c.id===id)) openCase(id,false);
+  else if(id==="about" || (e.state && e.state.page==="about")) openAbout(false);
+  else showHome(false);
+});
+
+/* reading progress — case studies only */
+let ticking=false;
+window.addEventListener("scroll",()=>{
+  if(ticking) return; ticking=true;
+  requestAnimationFrame(()=>{
+    if(caseEl.classList.contains("on")){
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progEl.style.width = (h>0 ? (window.scrollY/h)*100 : 0) + "%";
+    } else progEl.style.width="0%";
+    ticking=false;
+  });
+},{passive:true});
+
+/* deep link */
+(function(){
+  const id = location.hash.replace("#","");
+  if(CASES.some(c=>c.id===id)) openCase(id,false);
+  else if(id==="about") openAbout(false);
+})();
+
+</script>
+</body>
+</html>
